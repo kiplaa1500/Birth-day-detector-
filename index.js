@@ -20,8 +20,24 @@ function names() {
                 alert("You were born on: " + days[0] + "and your Akan name is: " + maleNames[0]);
             }
             else if (day === 1) {
-                alert("You were born on: " + days[0] + " and your Akan name is: " + maleNames[1]);
+                alert("You were born on: " + days[1] + " and your Akan name is: " + maleNames[1]);
             }
+            else if (day === 2) {
+                alert("You were born on: " + days[2] + " and your Akan name is: " + maleNames[2]);
+            }
+            else if (day === 3) {
+                alert("You were born on: " + days[3] + "and your Akan name is: " + maleNames[3]);
+            }
+            else if (day === 4) {
+                alert("You were born on: " + days[4] + "and your Akan name is: " + maleNames[4]);
+            }
+            else if (day === 5) {
+                alert("You were born on: " + days[5] + "and your Akan name is: " + maleNames[5]);
+            }
+            else if (day === 6) {
+                alert("You were born on: " +days[6] + "and you Akan name is: " +maleNames[6])
+            }
+
         }
     }
 }
