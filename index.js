@@ -14,7 +14,7 @@ function names() {
     // }
 
     var gender = document.querySelector('input[name="gender"]:checked').value;
-    var dayOfWeek = parseInt(((cc / 4) - 2 * cc - 1) + ((5 * yy / 4)) + ((26 * (mm + 1) / 10)) + dd) % 7;
+    var dayOfWeek = parseInt(((cc / 4) - 2 * cc - 1) + ((5 * dd / 4)) + ((26 * (mm + 1) / 10)) + yy) % 7;
 
     if (gender === "male") {
         if (dayOfWeek === 0) {
