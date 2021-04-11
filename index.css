@@ -6,9 +6,10 @@
 body{
     background-color: rgba(245, 228, 228, 0.5);
     margin-top: 2cm;
+    font-size: 20px;
 }
 .row{
-    font-size: 30px;
+    font-size: 20px;
 }
 .form {
     font-size: 30px;
