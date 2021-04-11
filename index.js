@@ -9,12 +9,12 @@ function names() {
     let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
     let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 
-    if (cc.value == "" || yy.value == "" || mm.value == "" || dd.value == "") {
-        alert("No blank spaces allowed");
-    }
+    // if (cc.value == "" || yy.value == "" || mm.value == "" || dd.value == "") {
+    //     alert("No blank spaces allowed");
+    // }
 
     var gender = document.querySelector('input[name="gender"]:checked').value;
-    var dayOfWeek = parseInt(((cc / 4) - 2 * cc - 1) + ((5 * dd / 4)) + ((26 * (mm + 1) / 10)) + yy) % 7;
+    var dayOfWeek = parseInt(((cc / 4) - 2 * cc - 1) + ((5 * yy / 4)) + ((26 * (mm + 1) / 10)) + dd) % 7;
 
     if (gender === "male") {
         if (dayOfWeek === 0) {
