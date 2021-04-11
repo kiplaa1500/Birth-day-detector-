@@ -18,7 +18,7 @@ To assces this project on your local files, you can clone it using these steps
 1. JS
 1. GIT 
 ### Live Site 
-View [live]()
+View [live](https://kiplaa1500.github.io/Birth-day-detector-/)
 ### Licence
 This project is under the [MIT](LICENCE) licence
 ### Support And Contact Service 
