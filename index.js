@@ -19,18 +19,25 @@ function names() {
     if (gender === "male") {
         if (dayOfWeek === 0) {
             alert("You were born on: " + day[0] + " and your Akan name is: " + maleNames[0]);
+            window.print(day, maleNames)
         } else if (dayOfWeek === 1) {
             alert("You were born on: " + day[1] + " and your Akan name is: " + maleNames[1]);
+            window.print(day, maleNames)
         } else if (dayOfWeek === 2) {
             alert("You were born on: " + day[2] + " and your Akan name is: " + maleNames[2]);
+            window.print(day, maleNames)
         } else if (dayOfWeek === 3) {
             alert("You were born on: " + day[3] + " and your Akan name is: " + maleNames[3]);
+            window.print(day, maleNames)
         } else if (dayOfWeek === 4) {
             alert("You were born on: " + day[4] + " and your Akan name is: " + maleNames[4]);
+            window.print(day, maleNames)
         } else if (dayOfWeek === 5) {
             alert("You were born on: " + day[5] + " and your Akan name is: " + maleNames[5]);
+            window.print(day, maleNames)
         } else if (dayOfWeek === 6) {
             alert("You were born on: " + day[6] + " and you Akan name is: " + maleNames[6])
+            window.print(day, maleNames)
         }
 
     } else {
