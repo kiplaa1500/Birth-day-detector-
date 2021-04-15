@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- bootstrap styling -->
     <div class="container">
         <div class="jumbotron">
             <h1>The exact birthday/Akan name app</h1>
@@ -22,12 +23,8 @@
                         inputof birth day deatils. Akan names is generaly based in Ghana adopted to be used in naming children according to day whenhe or she is born.
                 <h3>Enter your date of Birth here....</h3>
                 <form name="my-Form" class="form">
-
-                    <!-- <div class="form-group">
-                        <label for="cent">Century</label>
-                        <input type="number" class="form-control" id="cent" placeholder="birth century E.g 19,20"
-                            name="centuryOfBirth" required>
-                    </div> -->
+                    
+                    <!-- year month day form -->
                     <div class="form-group">
                         <label for="Birth-year">Year of Birth</label>
                         <input type="number" class="form-control" id="input-year" placeholder="birth year E.g 1999"
@@ -53,9 +50,11 @@
                             <input type="radio" id="input-female" name="gender" value="female" required>Female
                         </label>
                     </div>
+                    <!-- buttons -->
                     <button id="get-name" type="button" onclick="haveAkanName()" style="border-radius: 2cm; font-size: 20px;">Submit</button>
                     
                 </form>
+                <!-- short definitions  -->
             </div>
             <div class="row" style="font-size: 20px;">
                 <div class="col-md-6">
