@@ -5,92 +5,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Birth day detector</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="index.js"></script>
-    <link rel="stylesheet" href="index.css">
+    
+    <title>Birthday/Akan name</title>
 </head>
 
 <body>
     <div class="container">
         <div class="jumbotron">
-
             <h1>The exact birthday/Akan name app</h1>
             <div class="overlay">
                 <div class="container">
                     <p>Birth day detector is a simple app which help you to identify the exact day you were born through
-                        input
-                        of;
-                    </p>
-                    <h3>Enter your date of Birth here....</h3>
-                    <form name="my-Form" class="form" onsubmit="return haveAkanName()">
+                        inputof birth day deatils. Akan names is generaly based in Ghana adopted to be used in naming children according to day whenhe or she is born.
+                <h3>Enter your date of Birth here....</h3>
+                <form name="my-Form" class="form">
 
-                        <div class="form-group">
-                            <label for="cent">Century</label>
-                            <input type="number" class="form-control" id="cent" placeholder="birth century E.g 19,20"
-                                name="centuryOfBirth" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="Birth-year">Year of Birth</label>
-                            <input type="number" class="form-control" id="input-year" placeholder="birth year E.g 1999"
-                                name="YearOfBirth" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="month">Month of Birth</label>
-                            <input type="number" class="form-control" id="input-month"
-                                placeholder="birth month E.g 01 to 12" name="month" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="birth-date">Date of Birth</label>
-                            <input type="number" class="form-control" id="input-day"
-                                placeholder="birth date E.g 01 to 31" name="date" required>
-                        </div>
+                    <!-- <div class="form-group">
+                        <label for="cent">Century</label>
+                        <input type="number" class="form-control" id="cent" placeholder="birth century E.g 19,20"
+                            name="centuryOfBirth" required>
+                    </div> -->
+                    <div class="form-group">
+                        <label for="Birth-year">Year of Birth</label>
+                        <input type="number" class="form-control" id="input-year" placeholder="birth year E.g 1999"
+                            name="YearOfBirth" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="month">Month of Birth</label>
+                        <input type="number" class="form-control" id="input-month"
+                            placeholder="birth month E.g 01 to 12" name="month" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="birth-date">Date of Birth</label>
+                        <input type="number" class="form-control" id="input-day" placeholder="birth date E.g 01 to 31"
+                            name="date" required>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="gender">
-                                <h3>Select your <em>Gender</em> here.</h3>
+                    <div class="form-group">
+                        <label for="gender">
+                            <h3>Select your GENDER here.</h3>
 
-                                <input type="radio" id="input-male" name="gender" value="male" required>Male
-                                <br>
-                                <input type="radio" id="input-male" name="gender" value="female" required>Female
-                            </label>
-                        </div>
-                        <input id="get-name" type="submit" value="Get your Akan name">
-                        <input type="reset" value="Reset">
-                    </form>
+                            <input type="radio" id="input-male" name="gender" value="male" required>Male
+
+                            <input type="radio" id="input-female" name="gender" value="female" required>Female
+                        </label>
+                    </div>
+                    <button id="get-name" type="button" onclick="akanName()">Submit</button>
+                    
+                </form>
+            </div>
+            <div class="row" style="font-size: 20px;">
+                <div class="col-md-6">
+                    <h2>Male Names.</h2>
+                    <ol>
+                        <li>Sunday : Kwasi</li>
+                        <li>Monday : Kwadwo</li>
+                        <li>Tuesday : Kwabena</li>
+                        <li>Wednesday : Kwaku</li>
+                        <li>Thursday : Yaw</li>
+                        <li>Friday : Kofi</li>
+                        <li>Saturday : Kwame</li>
+                    </ol>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2>Male Names.</h2>
-                        <ol>
-                            <li>Sunday : Kwasi</li>
-                            <li>Monday : Kwadwo</li>
-                            <li>Tuesday : Kwabena</li>
-                            <li>Wednesday : Kwaku</li>
-                            <li>Thursday : Yaw</li>
-                            <li>Friday : Kofi</li>
-                            <li>Saturday : Kwame</li>
-                        </ol>
-                    </div>
-                    <div class="col-md-6">
-                        <h2>Female Names</h2>
-                        <ol>
-                            <li>Sunday : Akosua</li>
-                            <li>Monday : Adwoa</li>
-                            <li>Tuesday : Abenaa</li>
-                            <li>Wednesday : Akua</li>
-                            <li>Thursday : Yaa</li>
-                            <li>Friday : Afua</li>
-                            <li>Saturday : Ama</li>
-                        </ol>
-                    </div>
+                <div class="col-md-6">
+                    <h2>Female Names</h2>
+                    <ol>
+                        <li>Sunday : Akosua</li>
+                        <li>Monday : Adwoa</li>
+                        <li>Tuesday : Abenaa</li>
+                        <li>Wednesday : Akua</li>
+                        <li>Thursday : Yaa</li>
+                        <li>Friday : Afua</li>
+                        <li>Saturday : Ama</li>
+                    </ol>
                 </div>
             </div>
         </div>
-
     </div>
-
+    </div>
 </body>
 
 </html>

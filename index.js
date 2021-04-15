@@ -1,85 +1,44 @@
-function haveAkanName() {
+function akanName() {
+    let years = document.getElementById("input-year").value;
+    let months = document.getElementById("input-month").value;
+    let day = document.getElementById("input-day").value;
+    let males = document.getElementById("input-male").checked;
+    let females = document.getElementById("input-female").checked;
+
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "yaw", "Kofi", "Kwame"];
+    var femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 
 
-    let century = document.getElementById("cent").value;
-    let yearOfBirth = document.getElementById("input-year").value;
-    let monthOfBirth = Number(document.getElementById("input-month").value);
-    let dayOfBirth = Number(document.getElementById("input-day").value);
-    let genderA = document.getElementsByName("gender");
 
-    function getGender() {
-        for (var gender of genderA) {
-            if (gender.checked) {
-                return gender.value;
-            }
-        }
+    let dateString = months + "/" + day + "/" + years;
+    var birthDate = new Date(dateString);
+    var weekdDays = birthDate.getDay();
+
+
+    // conditions 
+
+    if (day <= 0 || day > 31) {
+        alert("Povide correct day details");
+    }
+    else if (months < 1 || months > 12 || months == 2 && day > 29) {
+        alert("Enter correct month datails !");
+    }
+    else if (years <= 0 || years > 2021) {
+        alert("Enter correct year deatils !!");
+    }
+    else if ((females === false)&&(males === false)) {
+        alert("Select at-least one gender");
+    }
+    else if (males === true) {
+        alert("You were born on : " + days[weekdDays] + " and your AKAN name is : " + maleNames[weekdDays]);
+    }
+    else if (females === true) {
+        alert("You were born on : " + days[weekdDays] + " and your AKAN name is : " + femaleNames[weekdDays]);
     }
 
+    let form = document.getElementsByName('my-Form')[0];
+    form.reset();
+    return false;
 
-    var myGenderValue = getGender();
-    console.log(myGenderValue);
-
-
-    function validateMonth() {
-        if (monthOfBirth < 1 || monthOfBirth > 12) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    function validateDate() {
-        if (monthOfBirth === 2 && Number(yearOfBirth) % 4 === 0) {
-            if (dayOfBirth > 28 || dayOfBirth < 1) {
-                return false;
-            } else if (monthOfBirth === 2 && dayOfBirth > 29) {
-                alert("Enter correct month !")
-            } else if (monthOfBirth === 2 && dayOfBirth < 1) {
-                alert("Enter correct month !")
-
-            } else {
-                return true;
-            }
-        } else if (dayOfBirth < 1 || dayOfBirth > 31) {
-            alert("Enter correct date !")
-        } else {
-            return true;
-
-        }
-    }
-
-    let validMonth = validateMonth();
-    let validDay = validateDate();
-
-    let weekDays = Math.floor((((Number(yearOfBirth.slice(0, 2)) / 4) - 2 * Number(yearOfBirth.slice(0, 2)) - 1) + ((5 * Number(yearOfBirth.slice(2, 4)) / 4)) + ((26 * (monthOfBirth + 1) / 10)) + dayOfBirth) % 7)
-
-
-    let weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-    let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
-
-
-    let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
-
-
-    let index;
-
-    if (weekDays == 0) {
-        index = 6;
-    } else {
-        index = weekDays - 1;
-    }
-
-    console.log(index);
-
-
-    if (myGenderValue == "male" && validMonth && validDay) {
-        alert("You were born on : " + weekDay[index] + " and your Akan name is " + maleNames[index]);
-        return false;
-    } else if (myGenderValue == "female" && validMonth && validDay) {
-        alert("You were born on : " + weekDay[index] + " and your Akan name is " + femaleNames[index]);
-        return false;
-    } else {
-        alert("Kindly provide correct details...")
-    }
 }
