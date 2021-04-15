@@ -17,7 +17,6 @@ function haveAkanName() {
 
 
     // conditions 
-
     if (years == "" || months == "" || day == "") {
         alert("Fill all required filds provided !!")
     }
