@@ -19,16 +19,16 @@ function akanName() {
     // conditions 
 
     if (day <= 0 || day > 31) {
-        alert("Povide correct day details");
+        alert("Povide correct day details...");
     }
     else if (months < 1 || months > 12 || months == 2 && day > 29) {
-        alert("Enter correct month datails !");
+        alert("Enter correct month datails... ");
     }
     else if (years <= 0 || years > 2021) {
-        alert("Enter correct year deatils !!");
+        alert("Enter correct year deatils... ");
     }
     else if ((females === false)&&(males === false)) {
-        alert("Select at-least one gender");
+        alert("Select at-least one gender...");
     }
     else if (males === true) {
         alert("You were born on : " + days[weekdDays] + " and your AKAN name is : " + maleNames[weekdDays]);
