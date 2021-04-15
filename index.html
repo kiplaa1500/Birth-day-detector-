@@ -21,13 +21,13 @@
                     <p>Birth day detector is a simple app which help you to identify the exact day you were born through
                         inputof birth day deatils. Akan names is generaly based in Ghana adopted to be used in naming children according to day whenhe or she is born.
                 <h3>Enter your date of Birth here....</h3>
-                <form name="my-Form" class="form" onsubmit="return haveAkanName()">
+                <form name="my-Form" class="form">
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="cent">Century</label>
                         <input type="number" class="form-control" id="cent" placeholder="birth century E.g 19,20"
                             name="centuryOfBirth" required>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="Birth-year">Year of Birth</label>
                         <input type="number" class="form-control" id="input-year" placeholder="birth year E.g 1999"
@@ -50,10 +50,11 @@
 
                             <input type="radio" id="input-male" name="gender" value="male" required>Male
 
-                            <input type="radio" id="input-male" name="gender" value="female" required>Female
+                            <input type="radio" id="input-female" name="gender" value="female" required>Female
                         </label>
                     </div>
-                    <input id="get-name" type="submit" value="Get your Akan name">
+                    <button id="get-name" type="button" onclick="haveAkanName()" style="border-radius: 2cm; font-size: 20px;">Submit</button>
+                    
                 </form>
             </div>
             <div class="row" style="font-size: 20px;">
