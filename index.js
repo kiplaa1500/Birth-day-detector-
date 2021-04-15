@@ -82,7 +82,4 @@ function haveAkanName() {
     } else {
         alert("Kindly provide correct details...")
     }
-
-
-
 }
