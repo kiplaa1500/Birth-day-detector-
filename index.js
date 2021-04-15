@@ -1,60 +1,88 @@
-function names() {
+function haveAkanName() {
 
-    let cc = parseInt(document.getElementById("cent").value);
-    let yy = parseInt(document.getElementById("yea").value);
-    let mm = parseInt(document.getElementById("mon").value);
-    let dd = parseInt(document.getElementById("Day").value);
 
-    let day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
-    let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+    let century = document.getElementById("cent").value;
+    let yearOfBirth = document.getElementById("input-year").value;
+    let monthOfBirth = Number(document.getElementById("input-month").value);
+    let dayOfBirth = Number(document.getElementById("input-day").value);
+    let genderA = document.getElementsByName("gender");
 
-    // if (cc.value == "" || yy.value == "" || mm.value == "" || dd.value == "") {
-    //     alert("No blank spaces allowed");
-    // }
-
-    var gender = document.querySelector('input[name="gender"]:checked').value;
-    var dayOfWeek = parseInt(((cc / 4) - 2 * cc - 1) + ((5 * yy / 4)) + ((26 * (mm + 1) / 10)) + dd) % 7;
-
-    if (gender === "male") {
-        if (dayOfWeek === 0) {
-            alert("You were born on: " + day[0] + " and your Akan name is: " + maleNames[0]);
-        } else if (dayOfWeek === 1) {
-            alert("You were born on: " + day[1] + " and your Akan name is: " + maleNames[1]);
-        } else if (dayOfWeek === 2) {
-            alert("You were born on: " + day[2] + " and your Akan name is: " + maleNames[2]);
-        } else if (dayOfWeek === 3) {
-            alert("You were born on: " + day[3] + " and your Akan name is: " + maleNames[3]);
-        } else if (dayOfWeek === 4) {
-            alert("You were born on: " + day[4] + " and your Akan name is: " + maleNames[4]);
-        } else if (dayOfWeek === 5) {
-            alert("You were born on: " + day[5] + " and your Akan name is: " + maleNames[5]);
-        } else if (dayOfWeek === 6) {
-            alert("You were born on: " + day[6] + " and you Akan name is: " + maleNames[6])
-        }
-
-    } else {
-        if (dayOfWeek === 0) {
-            alert("You were born on: " + day[0]);
-            alert("Your Akan name is: " + femaleNames[0]);
-        } else if (dayOfWeek === 1) {
-            alert("You were born on: " + day[1]);
-            alert("Your Akan name is: " + femaleNames[1]);
-        } else if (dayOfWeek === 2) {
-            alert("You were born on: " + day[2]);
-            alert("Your Akan name is: " + femaleNames[2]);
-        } else if (dayOfWeek === 3) {
-            alert("You were born on: " + day[3]);
-            alert("Your Akan name is: " + femaleNames[3]);
-        } else if (dayOfWeek === 4) {
-            alert("You were born on: " + day[4]);
-            alert("Your Akan name is: " + femaleNames[4]);
-        } else if (dayOfWeek === 5) {
-            alert("You were born on: " + day[5]);
-            alert("Your Akan name is: " + femaleNames[5]);
-        } else if (dayOfWeek === 6) {
-            alert("You were born on: " + day[6]);
-            alert("Your Akan name is: " + femaleNames[6]);
+    function getGender() {
+        for (var gender of genderA) {
+            if (gender.checked) {
+                return gender.value;
+            }
         }
     }
+
+
+    var myGenderValue = getGender();
+    console.log(myGenderValue);
+
+
+    function validateMonth() {
+        if (monthOfBirth < 1 || monthOfBirth > 12) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function validateDate() {
+        if (monthOfBirth === 2 && Number(yearOfBirth) % 4 === 0) {
+            if (dayOfBirth > 28 || dayOfBirth < 1) {
+                return false;
+            } else if (monthOfBirth === 2 && dayOfBirth > 29) {
+                alert("Enter correct month !")
+            } else if (monthOfBirth === 2 && dayOfBirth < 1) {
+                alert("Enter correct month !")
+
+            } else {
+                return true;
+            }
+        } else if (dayOfBirth < 1 || dayOfBirth > 31) {
+            alert("Enter correct date !")
+        } else {
+            return true;
+
+        }
+    }
+
+    let validMonth = validateMonth();
+    let validDay = validateDate();
+
+    let weekDays = Math.floor((((Number(yearOfBirth.slice(0, 2)) / 4) - 2 * Number(yearOfBirth.slice(0, 2)) - 1) + ((5 * Number(yearOfBirth.slice(2, 4)) / 4)) + ((26 * (monthOfBirth + 1) / 10)) + dayOfBirth) % 7)
+
+
+    let weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+
+
+    let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+
+
+    let index;
+
+    if (weekDays == 0) {
+        index = 6;
+    } else {
+        index = weekDays - 1;
+    }
+
+    console.log(index);
+
+
+    if (myGenderValue == "male" && validMonth && validDay) {
+        alert("You were born on : " + weekDay[index] + " and your Akan name is " + maleNames[index]);
+        return false;
+    } else if (myGenderValue == "female" && validMonth && validDay) {
+        alert("You were born on : " + weekDay[index] + " and your Akan name is " + femaleNames[index]);
+        return false;
+    } else {
+        alert("Kindly provide correct details...")
+    }
+
+
+
 }
