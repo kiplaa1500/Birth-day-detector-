@@ -18,10 +18,9 @@ function haveAkanName() {
 
     // conditions 
 
-    if (years == " " || months == " " || day == " ") {
+    if (years === "" || months === "" || day === "") {
         alert("Fill all required filds provided !!")
-    }
-    else if (day <= 0 || day > 31) {
+    } else if (day <= 0 || day > 31) {
         alert("Povide correct day details");
     } else if (months < 1 || months > 12 || months == 2 && day > 29) {
         alert("Enter correct month datails !");
