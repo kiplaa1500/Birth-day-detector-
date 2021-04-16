@@ -17,23 +17,24 @@ function akanName() {
 
 
     // conditions 
-
-    if (months < 1 || months > 12 || months == 2 && day > 29) {
+    if (years === "" || months === "" || day === "") {
+        alert("Please fill all required fields...")
+    } else if (day <= 0 || day > 31) {
+        alert("Povide correct day details...");
+    } else if (months < 1 || months > 12 || months == 2 && day > 29) {
         alert("Enter correct month datails... ");
-    }
-    else if (years <= 0 || years > 2021) {
+    } else if (years <= 0 || years > 2021) {
         alert("Enter correct year deatils... ");
-    }
-    else if ((females === false)&&(males === false)) {
+    } else if ((females === false) && (males === false)) {
         alert("Select at-least one gender...");
-    }
-    else if (males === true) {
+    } else if (males === true) {
         alert("You were born on : " + days[weekdDays] + " and your AKAN name is : " + maleNames[weekdDays]);
-    }
-    else if (females === true) {
+    } else if (females === true) {
         alert("You were born on : " + days[weekdDays] + " and your AKAN name is : " + femaleNames[weekdDays]);
     }
 
+
+    // reset the form on submision
     let form = document.getElementsByName('my-Form')[0];
     form.reset();
     return false;
